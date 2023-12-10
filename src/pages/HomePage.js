@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import { getFirestore, collection, getDocs } from "firebase/firestore";
 import { firebaseApp } from "../firebaseSDK.js";
 
 export const HomePage = () => {
+  const navigate = useNavigate();
   const [docIds, setDocIds] = useState([]);
   const [searchTerm, setSearchTerm] = useState("");
 
@@ -19,30 +21,44 @@ export const HomePage = () => {
     fetchNotes();
   }, []);
 
+  const handleDocClick = (docId) => {
+    navigate(`/document/${docId}`);
+  };
+
   return (
     <>
-      <input
-        type="text"
-        className="App-text-input"
-        placeholder="Search Documentation"
-        style={{
-          marginTop: "20px",
-          padding: "10px",
-          width: "300px",
-          border: "2px solid #61dafb",
-          borderRadius: "5px",
-        }}
-        onChange={(e) => setSearchTerm(e.target.value)}
-      />
-      {searchTerm && (
-        <div>
-          {docIds
-            .filter((id) => id.toLowerCase().includes(searchTerm.toLowerCase()))
-            .map((filteredId) => (
-              <p key={filteredId}>{filteredId}</p>
-            ))}
-        </div>
-      )}
+      <h1>Buffalo Surgery Documentation Wiki</h1>
+      <div class="centered-container">
+        <input
+          type="text"
+          className="App-input"
+          placeholder="Search Documentation"
+          style={{
+            padding: "10px",
+            width: "300px",
+            border: "2px solid #A9A9A9",
+            borderRadius: "5px",
+          }}
+          onChange={(e) => setSearchTerm(e.target.value)}
+        />
+        {searchTerm && (
+          <div>
+            {docIds
+              .filter((id) =>
+                id.toLowerCase().includes(searchTerm.toLowerCase()),
+              )
+              .map((filteredId) => (
+                <p
+                  key={filteredId}
+                  className="filtered-item"
+                  onClick={() => handleDocClick(filteredId)}
+                >
+                  {filteredId}
+                </p>
+              ))}
+          </div>
+        )}
+      </div>
     </>
   );
 };
