@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { getFirestore, doc, getDoc } from "firebase/firestore";
-import { firebaseApp } from "../firebaseSDK.js";
+import { db } from "../firebaseSDK.js";
 
 export const DocumentDetail = () => {
   const { docId } = useParams();
@@ -9,7 +9,6 @@ export const DocumentDetail = () => {
 
   useEffect(() => {
     const fetchData = async () => {
-      const db = getFirestore(firebaseApp);
       const docRef = doc(db, "Notes", docId);
       const docSnap = await getDoc(docRef);
 
