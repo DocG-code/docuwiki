@@ -31,19 +31,32 @@ export const DocumentDetail = () => {
     <div>
       {documentData ? (
         <>
-          <h2>Docmentation Details</h2>
-          <p>Procedure Code: {documentData.procedure_code}</p>
-          <button onClick={() => copyToClipboard(documentData.procedure_code)}>
-            Copy
-          </button>
-          <p>Diagnosis Code: {documentData.diagnosise_code}</p>
-          <button onClick={() => copyToClipboard(documentData.diagnosise_code)}>
-            Copy
-          </button>
-          <p>Note Template: {documentData.note_template}</p>
-          <button onClick={() => copyToClipboard(documentData.note_template)}>
-            Copy
-          </button>
+          <h2>{docId}</h2>
+          <div className="data-container">
+            <label>Procedure Code:</label>
+            <div className="data-item">{documentData.procedure_code}</div>
+            <button
+              onClick={() => copyToClipboard(documentData.procedure_code)}
+            >
+              Copy
+            </button>
+          </div>
+          <div className="data-container">
+            <label>Diagnosis Code(s):</label>
+            <div className="data-item">{documentData.diagnosis_code}</div>
+            <button
+              onClick={() => copyToClipboard(documentData.diagnosise_code)}
+            >
+              Copy
+            </button>
+          </div>
+          <div className="data-container">
+            <label>Note Template:</label>
+            <div className="data-item">{documentData.note_template}</div>
+            <button onClick={() => copyToClipboard(documentData.note_template)}>
+              Copy
+            </button>
+          </div>
         </>
       ) : (
         <p>Loading...</p>

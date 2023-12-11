@@ -44,3 +44,26 @@ h1 {
   box-sizing: border-box;
   border-radius: 5px; /* Optional: for rounded corners */
 }
+
+.data-container {
+  margin-bottom: 10px;
+}
+
+.data-item {
+  border: 1px solid lightgrey;
+  padding: 5px;
+  margin-top: 5px;
+  white-space: pre-wrap; /* Add this line */
+}
+
+.App-input {
+  padding: 10px;
+  width: 300px;
+  border: 2px solid gray;
+  borderRadius: 5px;
+}
+
+.App-input:focus {
+  border: 2px solid red;
+  outline: none;
+}

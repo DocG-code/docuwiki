@@ -34,10 +34,7 @@ export const HomePage = () => {
           className="App-input"
           placeholder="Search Documentation"
           style={{
-            padding: "10px",
-            width: "300px",
-            border: "2px solid #A9A9A9",
-            borderRadius: "5px",
+
           }}
           onChange={(e) => setSearchTerm(e.target.value)}
         />
