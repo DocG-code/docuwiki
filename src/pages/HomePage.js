@@ -8,7 +8,7 @@ import "./HomePage.css";
 export const HomePage = () => {
   const [user, loading, error] = useAuthState(auth);
   const navigate = useNavigate();
-  const [docIds, setDocIds] = useState([]);
+  const [docs, setDocIds] = useState([]);
   const [searchTerm, setSearchTerm] = useState("");
 
   const post = () => {};
@@ -18,8 +18,11 @@ export const HomePage = () => {
       const notesCollectionRef = collection(db, "Notes");
       const notesSnapshot = await getDocs(notesCollectionRef);
 
-      const ids = notesSnapshot.docs.map((doc) => doc.id);
-      setDocIds(ids);
+      const docs = notesSnapshot.docs.map((doc) => ({
+        id: doc.id,
+        title: doc.data().title,
+      }));
+      setDocIds(docs);
     };
 
     fetchNotes();
@@ -37,13 +40,18 @@ export const HomePage = () => {
           <div>Loading...</div>
         ) : user ? (
           <>
-          <button onClick={logout}>Logout</button>
-          <button onClick={() => navigate('create')}>Create your own template!</button>
+            <button onClick={logout}>Logout</button>
+            <button onClick={() => navigate("create")}>
+              Create your own template!
+            </button>
+            <button onClick={() => navigate("mytemplates")}>
+              My templates
+            </button>
           </>
         ) : (
           <>
-          <h2>You must login to create your own templates!</h2>
-          <button onClick={() => navigate('login')}>Login</button>
+            <h2>You must login to create your own templates!</h2>
+            <button onClick={() => navigate("login")}>Login</button>
           </>
         )}
       </div>
@@ -57,17 +65,17 @@ export const HomePage = () => {
         />
         {searchTerm && (
           <div>
-            {docIds
-              .filter((id) =>
-                id.toLowerCase().includes(searchTerm.toLowerCase())
+            {docs
+              .filter((doc) =>
+                doc.title.toLowerCase().includes(searchTerm.toLowerCase())
               )
-              .map((filteredId) => (
+              .map((filteredDoc) => (
                 <p
-                  key={filteredId}
+                  key={filteredDoc.id}
                   className="filtered-item"
-                  onClick={() => handleDocClick(filteredId)}
+                  onClick={() => handleDocClick(filteredDoc.id)}
                 >
-                  {filteredId}
+                  {filteredDoc.title}
                 </p>
               ))}
           </div>
