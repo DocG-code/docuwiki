@@ -34,24 +34,15 @@ export const HomePage = () => {
 
   return (
     <>
-      <h1>Buffalo Surgery Documentation Wiki</h1>
       <div>
         {loading ? (
           <div>Loading...</div>
         ) : user ? (
-          <>
-            <button onClick={logout}>Logout</button>
-            <button onClick={() => navigate("create")}>
-              Create your own template!
-            </button>
-            <button onClick={() => navigate("mytemplates")}>
-              My templates
-            </button>
+     <>
           </>
         ) : (
           <>
             <h2>You must login to create your own templates!</h2>
-            <button onClick={() => navigate("login")}>Login</button>
           </>
         )}
       </div>

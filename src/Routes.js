@@ -8,7 +8,6 @@ import { My_Templates } from "./pages/MyTemplates.js";
 
 export const AppRoutes = () => {
   return (
-    <Router>
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/login" element={<Login />} />
@@ -18,6 +17,5 @@ export const AppRoutes = () => {
         {/* Error route */}
         <Route path="*" element={<NotFoundPage />} />
       </Routes>
-    </Router>
   );
 };

@@ -33,9 +33,9 @@ export const DocumentDetail = () => {
           <h2>{documentData.title}</h2>
           <div className="data-container">
             <label>Procedure Code:</label>
-            <div className="data-item">{documentData.procedure_code}</div>
+            <div className="data-item">{documentData.procedureCode}</div>
             <button
-              onClick={() => copyToClipboard(documentData.procedure_code)}
+              onClick={() => copyToClipboard(documentData.procedureCode)}
             >
               Copy
             </button>
@@ -43,7 +43,7 @@ export const DocumentDetail = () => {
           <div className="data-container">
             <label>Note Template:</label>
             <div className="data-item">{documentData.content}</div>
-            <button onClick={() => copyToClipboard(documentData.note_template)}>
+            <button onClick={() => copyToClipboard(documentData.content)}>
               Copy
             </button>
           </div>
