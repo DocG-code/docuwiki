@@ -9,24 +9,24 @@ export const Header = () => {
 
     return (
         <header>
-            <h1>Surgery Documentation Wiki</h1>
+            <h1>Surgery Documentation Wizard</h1>
             <nav>
                 <ul>
                     <li>
-                        <Link to="/">Home</Link>
+                        <Link to="/">Search</Link>
                     </li>
                     {user && (
                         <>
                             <li>
-                                <Link to="/mytemplates">My Templates</Link>
+                                <Link to="/mytemplates">My templates</Link>
                             </li>
                             <li>
-                                <Link to="/create">Create New Template</Link>
+                                <Link to="/create">Create new template</Link>
                             </li>
                         </>
                     )}
                     <li>
-                        <button onClick={user ? logout : null}>
+                        <button className="headerButton" onClick={user ? logout : null}>
                             {user ? 'Logout' : <Link to="/login">Login</Link>}
                         </button>
                     </li>

@@ -44,21 +44,22 @@ export const Template_Post = () => {
         if (!user) navigate("/Login");
     }, [user, loading]);
     return(
-        <form onSubmit={handleSubmit}>
-            <label>
-                title:
-                <input type="text" value={title} onChange={(e) => setTitle(e.target.value)} />
-            </label>
+      <><h2>Create a new template</h2><form onSubmit={handleSubmit}>
+        <h2 className='warning'>DO NOT enter patient health information. This is only a note template.</h2>
         <label>
-          Procedure Codes:
+          Title
+          <input type="text" value={title} onChange={(e) => setTitle(e.target.value)} />
+        </label>
+        <label>
+          CPT Code (numbers only)
           <input type="text" value={procedureCode} onChange={(e) => setProcedureCode(e.target.value)} />
         </label>
         <label>
-          Note Template:
+          Note Template
           <textarea className="textarea" value={content} onChange={(e) => setContent(e.target.value)} />
         </label>
         <button type="submit">{buttonText}</button>
-      </form>
+      </form></>
         
     );
 }

@@ -42,11 +42,11 @@ export const HomePage = () => {
           </>
         ) : (
           <>
-            <h2>You must login to create your own templates!</h2>
+            <p>Login to create and view your own templates</p>
           </>
         )}
       </div>
-      <div class="centered-container">
+      <div className="centered-container">
         <input
           type="text"
           className="App-input"

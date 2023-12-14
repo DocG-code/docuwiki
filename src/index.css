@@ -49,19 +49,16 @@ h1 {
   margin-bottom: 10px;
 }
 
-.data-item {
-  border: 1px solid lightgrey;
-  padding: 5px;
-  margin-top: 5px;
-  white-space: pre-wrap; /* Add this line */
-}
+
 
 .App-input {
   padding: 10px;
   width: 300px;
+  height: 50px;
   border: 2px solid gray;
-  borderRadius: 5px;
+  font-size: 20px; /* Set the font size to a larger value */
 }
+
 
 .App-input:focus {
   border: 2px solid red;
