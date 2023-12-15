@@ -1,9 +1,43 @@
 h2 {
-    text-align: center;
-    padding-top: 20px;
+  text-align: center;
+  padding-top: 20px;
 }
 
 button {
-    display: block;
-    margin: 0 auto;
+  display: block;
+  margin: 0 auto;
+}
+
+.filtered-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  border: 1px solid gray;
+  padding: 5px;
+  margin-top: 5px;
+  flex-wrap: wrap;
+}
+
+.filtered-item span {
+  font-size: 0.8em;
+  font-style: italic;
+  color: gray;
+  border: none;
+  flex-shrink: 0;
+  max-width: 100%;
+}
+
+.filtered-item .title {
+  text-align: left;
+  color: black;
+  font-style: normal;
+  font-size: 1em;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.filtered-item:hover {
+  background-color: lightblue;
+  cursor: pointer;
 }

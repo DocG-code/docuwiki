@@ -33,7 +33,8 @@ export const DocumentDetail = () => {
       <div className="container">
         {documentData ? (
           <>
-            <h2>{documentData.title}</h2>
+          <p className="user">{documentData.userName}</p>
+            <h2 className="header-title">{documentData.title}</h2>
             <div className="data-container">
               <label>Procedure CPT Code: {documentData.procedureCode}</label>
               <button

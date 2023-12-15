@@ -32,7 +32,7 @@ box-shadow: 0 0 5px rgba(0, 0, 0, 0.3); /* Add a shadow effect */
   position: relative;
   margin-top: 20px;
   font-size: 20px; /* Increase the font size */
-  padding: 30px;
+  padding: 0px 30px 0 30px; /* Add some padding */
 }
 
 .data-item {
@@ -64,11 +64,20 @@ button:active {
   background-color: #004080;
 }
 
-h2 {
+.header-title {
   text-align: left;
+  padding-left: 30px;
 }
 
 .warning {
   font-weight: bold;
   color: red;
+}
+
+.user {
+  font-size: 0.8em;
+  color: gray;
+  font-style: italic;
+  padding-right: 30px;
+  text-align: right;
 }

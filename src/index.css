@@ -29,21 +29,13 @@ code {
 
 .centered-input,
 .filtered-item {
-  width: 300px; /* Fixed width */
+  width: 500px; /* Fixed width */
 }
 
 h1 {
   text-align: center;
 }
 
-.filtered-item {
-  background-color: lightgrey; /* Light grey background */
-  border: 1px solid darkgrey; /* Slightly darker grey border */
-  padding: 5px;
-  margin: 0;
-  box-sizing: border-box;
-  border-radius: 5px; /* Optional: for rounded corners */
-}
 
 .data-container {
   margin-bottom: 10px;
@@ -53,7 +45,7 @@ h1 {
 
 .App-input {
   padding: 10px;
-  width: 300px;
+  width: 500px;
   height: 50px;
   border: 2px solid gray;
   font-size: 20px; /* Set the font size to a larger value */

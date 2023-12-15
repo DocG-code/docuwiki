@@ -21,8 +21,10 @@ export const HomePage = () => {
       const docs = notesSnapshot.docs.map((doc) => ({
         id: doc.id,
         title: doc.data().title,
+        user: doc.data().userName,
       }));
       setDocIds(docs);
+      console.log(docs)
     };
 
     fetchNotes();
@@ -61,13 +63,14 @@ export const HomePage = () => {
                 doc.title.toLowerCase().includes(searchTerm.toLowerCase())
               )
               .map((filteredDoc) => (
-                <p
+                <div
                   key={filteredDoc.id}
                   className="filtered-item"
                   onClick={() => handleDocClick(filteredDoc.id)}
                 >
-                  {filteredDoc.title}
-                </p>
+                  <span className="title">{filteredDoc.title}</span>
+                  <span>{filteredDoc.user}</span>
+                </div>
               ))}
           </div>
         )}
