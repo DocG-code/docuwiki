@@ -29,25 +29,25 @@ export const DocumentDetail = () => {
   };
 
   return (
-    <div className="page-container">
-      <div className="container">
+    <div className="mt-8 flex flex-col w-full justify-items-start items-center">
+      <div className="w-3/4 flex flex-col border-2 shadow-lg just-center">
         {documentData ? (
           <>
           <p className="user">{documentData.userName}</p>
-            <h2 className="header-title">{documentData.title}</h2>
-            <div className="data-container">
+            <h2 className="text-xl text-left pl-8">{documentData.title}</h2>
+            <div className="p-8">
               <label>Procedure CPT Code: {documentData.procedureCode}</label>
               <button
-                className="copy-button"
+                className="btn btn-primary"
                 onClick={() => copyToClipboard(documentData.procedureCode)}
               >
                 Copy
               </button>
             </div>
-            <div className="data-container">
-              <div className="data-item">{documentData.content}</div>
+            <div className="p-8">
+              <div className="mb-4">{documentData.content}</div>
               <button
-                className="copy-button"
+                className="btn btn-primary"
                 onClick={() => copyToClipboard(documentData.content)}
               >
                 Copy

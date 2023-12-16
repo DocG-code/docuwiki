@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { auth, signInWithGoogle } from "../firebaseSDK.js";
 import { useAuthState } from "react-firebase-hooks/auth";
-import "./Login.css";
 
 export function Login() {
   const [user, loading, error] = useAuthState(auth);
@@ -16,10 +15,11 @@ export function Login() {
   }, [user, loading]);
   return (
     <>
-    <h1>Secure Google Login</h1>
-    <div className="login">
-      <div className="login__container">
-        <button className="login__btn login__google" onClick={signInWithGoogle}>
+    <p className="text-center mt-4">Login to create and view your templates</p>
+    <h1 className="mt-8">Google Login</h1>
+    <div className="flex items-center justify-center">
+      <div className="flex-col text-center p-8 bg-base-300 rounded-md">
+        <button className="btn btn-lg btn-primary" onClick={signInWithGoogle}>
           Login with Google
         </button>
       </div>

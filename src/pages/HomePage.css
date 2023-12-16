@@ -3,11 +3,6 @@ h2 {
   padding-top: 20px;
 }
 
-button {
-  display: block;
-  margin: 0 auto;
-}
-
 .filtered-item {
   display: flex;
   justify-content: space-between;
@@ -35,9 +30,4 @@ button {
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
-}
-
-.filtered-item:hover {
-  background-color: lightblue;
-  cursor: pointer;
 }

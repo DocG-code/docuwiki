@@ -51,9 +51,9 @@ export const HomePage = () => {
       <div className="centered-container">
         <input
           type="text"
-          className="App-input"
+          className="input input-bordered input-lg"
           placeholder="Search Documentation"
-          style={{}}
+          style={{ width: '500px' }}
           onChange={(e) => setSearchTerm(e.target.value)}
         />
         {searchTerm && (
@@ -65,7 +65,7 @@ export const HomePage = () => {
               .map((filteredDoc) => (
                 <div
                   key={filteredDoc.id}
-                  className="filtered-item"
+                  className="bg-base-200 bg-hover:cursor-pointer hover:bg-accent filtered-item rounded-md"
                   onClick={() => handleDocClick(filteredDoc.id)}
                 >
                   <span className="title">{filteredDoc.title}</span>
