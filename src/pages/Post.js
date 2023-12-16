@@ -43,54 +43,56 @@ export const Template_Post = () => {
     if (!user) navigate("/Login");
   }, [user, loading]);
   return (
-    <div className="flex flex-col">
-      <div>
-        <h2 className="text-black text-xl">Create a new template</h2>
-        <h2 className="warning">
-          DO NOT enter patient information. This is only a note template.
-        </h2>
-      </div>
-      <div className="flex justify-center">
-        <form className="w-full my-12" onSubmit={handleSubmit}>
-          <label className="form-control">
-            <div className="label">
-              <span className="label-text">Title</span>
-            </div>
-            <input
-              placeholder="Template title"
-              className="input input-bordered w-full"
-              type="text"
-              value={title}
-              onChange={(e) => setTitle(e.target.value)}
-            />
-          </label>
-          <label className="form-control">
-            <div className="label">
-              <span className="label-text">CPT code</span>
-            </div>
-            <input
-              placeholder="Numbers only"
-              className="input input-bordered w-full"
-              type="text"
-              value={procedureCode}
-              onChange={(e) => setProcedureCode(e.target.value)}
-            />
-          </label>
-          <label className="form-control">
-            <div className="label">
-              <span className="label-text">Note template</span>
-            </div>
-            <textarea
-              className="textarea textarea-bordered textarea-lg"
-              value={content}
-              onChange={(e) => setContent(e.target.value)}
-              placeholder="Enter your note template here"
-            />
-          </label>
-          <button className="btn btn-primary" type="submit">
-            {buttonText}
-          </button>
-        </form>
+    <div className="mt-8 flex flex-col w-full justify-start items-center">
+      <div className="flex-col w-3/4">
+        <div>
+          <h2 className="text-black text-xl">Create a new template</h2>
+          <h2 className="warning">
+            DO NOT enter patient information. This is only a note template.
+          </h2>
+        </div>
+        <div className="flex justify-center">
+          <form className="w-full my-12" onSubmit={handleSubmit}>
+            <label className="form-control">
+              <div className="label">
+                <span className="label-text">Title</span>
+              </div>
+              <input
+                placeholder="Template title"
+                className="input input-bordered w-full"
+                type="text"
+                value={title}
+                onChange={(e) => setTitle(e.target.value)}
+              />
+            </label>
+            <label className="form-control">
+              <div className="label">
+                <span className="label-text">CPT code</span>
+              </div>
+              <input
+                placeholder="Numbers only"
+                className="input input-bordered w-full"
+                type="text"
+                value={procedureCode}
+                onChange={(e) => setProcedureCode(e.target.value)}
+              />
+            </label>
+            <label className="form-control">
+              <div className="label">
+                <span className="label-text">Note template</span>
+              </div>
+              <textarea
+                className="textarea textarea-bordered textarea-lg"
+                value={content}
+                onChange={(e) => setContent(e.target.value)}
+                placeholder="Enter your note template here"
+              />
+            </label>
+            <button className="btn btn-primary" type="submit">
+              {buttonText}
+            </button>
+          </form>
+        </div>
       </div>
     </div>
   );

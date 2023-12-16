@@ -44,7 +44,7 @@ export const DocumentDetail = () => {
                 Copy
               </button>
             </div>
-            <div className="p-8">
+            <div className="p-8 whitespace-pre-wrap">
               <div className="mb-4">{documentData.content}</div>
               <button
                 className="btn btn-primary"

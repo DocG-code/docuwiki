@@ -4,6 +4,7 @@ import { collection, getDocs } from "firebase/firestore";
 import { auth, db, logout } from "../firebaseSDK.js";
 import { useAuthState } from "react-firebase-hooks/auth";
 import "./HomePage.css";
+import wizardImage from "../images/wizard.png";
 
 export const HomePage = () => {
   const [user, loading, error] = useAuthState(auth);
@@ -44,14 +45,15 @@ export const HomePage = () => {
           </>
         ) : (
           <>
-            <p>Login to create and view your own templates</p>
+            <p className="text-center mt-8">Login to create and view your own templates</p>
           </>
         )}
       </div>
-      <div className="centered-container">
+      <div className="centered-container mt-16">
+      <img src={wizardImage} alt="Wizard" style={{ width: '300px' }} /> 
         <input
           type="text"
-          className="input input-bordered input-lg"
+          className="input input-bordered border-neutral input-lg shadow-md"
           placeholder="Search Documentation"
           style={{ width: '500px' }}
           onChange={(e) => setSearchTerm(e.target.value)}
