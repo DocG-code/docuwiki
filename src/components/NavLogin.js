@@ -20,14 +20,14 @@ const Navbar = () => {
         </div>
         <div className="flex-none">
           <ul className="menu menu-horizontal px-1">
-            <li Link to="/">
+            <li>
               <Link to="/mytemplates">My templates</Link>
             </li>
             <li>
               <ul className=" bg-base-100 rounded-t-none">
                 <li>
                   <Link to="/create">
-                    <a>Create template</a>
+                    Create template
                   </Link>
                 </li>
               </ul>

@@ -15,7 +15,7 @@ export function Login() {
   }, [user, loading]);
   return (
     <>
-    <p className="text-center mt-4">Login to create and view your templates</p>
+    <p className="text-center mt-4">Login to create, edit and view your templates</p>
     <h1 className="mt-8">Google Login</h1>
     <div className="flex items-center justify-center">
       <div className="flex-col text-center p-8 bg-base-300 rounded-md">

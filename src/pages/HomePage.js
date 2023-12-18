@@ -12,8 +12,6 @@ export const HomePage = () => {
   const [docs, setDocIds] = useState([]);
   const [searchTerm, setSearchTerm] = useState("");
 
-  const post = () => {};
-
   useEffect(() => {
     const fetchNotes = async () => {
       const notesCollectionRef = collection(db, "Notes");
