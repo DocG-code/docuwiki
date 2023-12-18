@@ -7,7 +7,8 @@ This is a surgical education project that allows attendings and residents to fin
 This is my first public github project. Please contribute if you would like!
 
 ## To-do
-[ ] Implement editting of user own templates
-[ ] Update Firestore rule to only let users edit their own documents, not other people's docs
+[x] Implement editting of user own templates
+[x] Update Firestore rule to only let users edit their own documents, not other people's docs
+[ ] Style edit and copy buttons
 [ ] implement view count
-[x] actually style it
+

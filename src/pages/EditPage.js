@@ -14,6 +14,7 @@ function Edit() {
   const navigate = useNavigate();
   const docRef = doc(db, "Notes", docId);
 
+
   useEffect(() => {
     if (loading) {
       // maybe trigger a loading screen
@@ -53,64 +54,65 @@ function Edit() {
       uid: user.uid,
     });
     console.log("After update:", title, procedureCode, content);
+    alert("Template updated");
   };
 
-  return (
-    <div className="mt-8 flex flex-col w-full justify-start items-center">
-      <div className="flex-col w-3/4">
-        <div>
-          <h2 className="text-black text-xl">Edit your note template</h2>
-          <h2 className="warning">
-            DO NOT enter patient information. This is only a note template.
-          </h2>
+return (
+        <div className="mt-8 flex flex-col w-full justify-start items-center">
+            <div className="flex-col w-3/4">
+                <div>
+                    <h2 className="text-black text-xl">Edit your note template</h2>
+                    <h2 className="warning">
+                        DO NOT enter patient information. This is only a note template.
+                    </h2>
+                </div>
+                <div className="flex justify-center">
+                    <form className="w-full my-12" onSubmit={handleUpdate}>
+                        <label className="form-control">
+                            <div className="label">
+                                <span className="label-text">Title</span>
+                            </div>
+                            <input
+                                placeholder="Template title"
+                                className="input input-bordered w-full"
+                                type="text"
+                                value={title}
+                                onChange={(e) => setTitle(e.target.value)}
+                            />
+                        </label>
+                        <label className="form-control">
+                            <div className="label">
+                                <span className="label-text">CPT code</span>
+                            </div>
+                            <input
+                                placeholder="Numbers only"
+                                className="input input-bordered w-full"
+                                type="text"
+                                value={procedureCode}
+                                onChange={(e) => setProcedureCode(e.target.value)}
+                            />
+                        </label>
+                        <label className="form-control">
+                            <div className="label">
+                                <span className="label-text">Note template</span>
+                            </div>
+                            <TextareaAutosize
+                                minRows={5}
+                                placeholder="Numbers only"
+                                className="textarea textarea-bordered textarea-lg"
+                                type="text"
+                                value={content}
+                                onChange={(e) => setContent(e.target.value)}
+                            />
+                        </label>
+                        <button className="btn btn-primary" type="submit">
+                            Update
+                        </button>
+                    </form>
+                </div>
+            </div>
         </div>
-        <div className="flex justify-center">
-          <form className="w-full my-12" onSubmit={handleUpdate}>
-            <label className="form-control">
-              <div className="label">
-                <span className="label-text">Title</span>
-              </div>
-              <input
-                placeholder="Template title"
-                className="input input-bordered w-full"
-                type="text"
-                value={title}
-                onChange={(e) => setTitle(e.target.value)}
-              />
-            </label>
-            <label className="form-control">
-              <div className="label">
-                <span className="label-text">CPT code</span>
-              </div>
-              <input
-                placeholder="Numbers only"
-                className="input input-bordered w-full"
-                type="text"
-                value={procedureCode}
-                onChange={(e) => setProcedureCode(e.target.value)}
-              />
-            </label>
-            <label className="form-control">
-              <div className="label">
-                <span className="label-text">Note template</span>
-              </div>
-              <TextareaAutosize
-                minRows={5}
-                placeholder="Numbers only"
-                className="textarea textarea-bordered textarea-lg"
-                type="text"
-                value={content}
-                onChange={(e) => setContent(e.target.value)}
-              />
-            </label>
-            <button className="btn btn-primary" type="submit">
-              Update
-            </button>
-          </form>
-        </div>
-      </div>
-    </div>
-  );
+);
 }
 
 export default Edit;
