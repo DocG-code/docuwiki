@@ -12,6 +12,11 @@ This is my first public github project. Please contribute if you would like!
 [x] Style edit and copy buttons
 [x] Make responsive
 [x] Get domain name
+[ ] implement footer
+[ ] fully implement dark mode (use DaisyUI colors)
+[ ] Add dark mode wizard homepage image
+[ ] Link to github for contributions
+[ ] add about page
 [ ] Page to view all templates by user
 [ ] implement view count
 

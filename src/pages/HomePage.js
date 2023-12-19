@@ -4,13 +4,24 @@ import { collection, getDocs } from "firebase/firestore";
 import { auth, db, logout } from "../firebaseSDK.js";
 import { useAuthState } from "react-firebase-hooks/auth";
 import "./HomePage.css";
-import wizardImage from "../images/wizard.png";
+import wizardImageLight from "../images/wizard.png";
+import wizardImageDark from "../images/dark-wizard.png";
 
 export const HomePage = () => {
   const [user, loading, error] = useAuthState(auth);
   const navigate = useNavigate();
   const [docs, setDocIds] = useState([]);
   const [searchTerm, setSearchTerm] = useState("");
+  const [wizardImage, setWizardImage] = useState(wizardImageLight);
+
+  useEffect(() => {
+    const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+    setWizardImage(mediaQuery.matches ? wizardImageDark : wizardImageLight);
+
+    const handler = () => setWizardImage(mediaQuery.matches ? wizardImageDark : wizardImageLight);
+    mediaQuery.addEventListener('change', handler);
+    return () => mediaQuery.removeEventListener('change', handler);
+  }, []);
 
   useEffect(() => {
     const fetchNotes = async () => {
@@ -65,7 +76,7 @@ export const HomePage = () => {
               .map((filteredDoc) => (
                 <div
                   key={filteredDoc.id}
-                  className="bg-base-200 bg-hover:cursor-pointer hover:bg-accent filtered-item rounded-md"
+                  className="text-base-content bg-base-200 bg-hover:cursor-pointer hover:bg-accent filtered-item rounded-md"
                   onClick={() => handleDocClick(filteredDoc.id)}
                 >
                   <span className="title">{filteredDoc.title}</span>
