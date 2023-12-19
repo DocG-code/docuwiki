@@ -31,11 +31,3 @@ label {
   font-weight: bold;
   color: red;
 }
-
-.user {
-  font-size: 0.8em;
-  color: gray;
-  font-style: italic;
-  padding-right: 30px;
-  text-align: right;
-}

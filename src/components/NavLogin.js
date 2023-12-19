@@ -14,7 +14,7 @@ const Navbar = () => {
         <div className="flex-1">
           <Link to="/">
             <a className="btn btn-ghost text-xl">
-              Surgery Documentation Wizard
+              Documentation Wizard
             </a>
           </Link>
         </div>

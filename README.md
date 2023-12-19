@@ -11,4 +11,5 @@ This is my first public github project. Please contribute if you would like!
 [x] Update Firestore rule to only let users edit their own documents, not other people's docs
 [ ] Style edit and copy buttons
 [ ] implement view count
+[ ] Get domain name
 
