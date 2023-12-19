@@ -27,7 +27,7 @@ export const DocumentDetail = () => {
   }, [docId]);
 
   const copyToClipboard = (text) => {
-    const copiedText = `CPT${text}`;
+    const copiedText = `${text}`;
     navigator.clipboard.writeText(copiedText);
   };
 
@@ -57,7 +57,7 @@ export const DocumentDetail = () => {
       <div className="flex justify-between w-full pt-4">
       <button
         className="btn btn-primary"
-        onClick={() => copyToClipboard(documentData.content)}
+        onClick={() => copyToClipboard(`Procedure CPT code: ${documentData.procedureCode}\n\n${documentData.content}`)}
       >
         Copy
       </button>
