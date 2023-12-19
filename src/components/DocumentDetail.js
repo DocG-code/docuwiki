@@ -36,8 +36,8 @@ export const DocumentDetail = () => {
   };
 
   return (
-    <div className="mt-8 flex flex-col w-full justify-items-start items-center">
-      <div className="w-3/4 flex flex-col border-2 shadow-lg just-center">
+    <div className="mx-auto mt-8 flex flex-col p-2 justify-items-start items-center">
+      <div className="flex flex-col border-2 shadow-lg just-center">
         {documentData ? (
           <>
             <p className="user text-right pr-8 pt-2">✏️ {documentData.userName}</p>
@@ -54,7 +54,7 @@ export const DocumentDetail = () => {
           <p>Loading...</p>
         )}
       </div>
-      <div className="flex justify-between w-3/4 pt-4">
+      <div className="flex justify-between w-full pt-4">
       <button
         className="btn btn-primary"
         onClick={() => copyToClipboard(documentData.content)}

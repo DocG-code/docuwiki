@@ -44,8 +44,8 @@ export const Template_Post = () => {
     if (!user) navigate("/Login");
   }, [user, loading]);
   return (
-    <div className="mt-8 flex flex-col w-full justify-start items-center">
-      <div className="flex-col w-3/4">
+    <div className="mt-8 p-2 flex flex-col justify-start items-center">
+      <div className="flex-col w-full">
         <div>
           <h2 className="text-black text-xl">Create a new template</h2>
           <h2 className="warning">

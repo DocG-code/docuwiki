@@ -8,7 +8,7 @@ export const Header = () => {
     const [user] = useAuthState(auth);
 
     return (
-        <header>
+        <header className=''>
             <Navbar/>
         </header>
     );

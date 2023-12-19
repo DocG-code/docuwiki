@@ -43,7 +43,7 @@ export const My_Templates = () => {
     <div className="">
       {!!user ? (
         <div className="mt-8 flex flex-col items-center justify-start">
-          <div className="flex-col w-3/4">
+          <div className="flex-col w-full">
             <h2 className="text-xl">My templates</h2>
             {documentData &&
               documentData.map((doc) => (
