@@ -37,7 +37,7 @@ export const DocumentDetail = () => {
 
   return (
     <div className="mx-auto mt-8 flex flex-col p-2 justify-items-start items-center">
-      <div className="flex flex-col border-2 shadow-lg just-center">
+      <div className="w-full flex flex-col border-2 shadow-lg">
         {documentData ? (
           <>
             <p className="user text-right pr-8 pt-2">✏️ {documentData.userName}</p>
@@ -57,7 +57,7 @@ export const DocumentDetail = () => {
       <div className="flex justify-between w-full pt-4">
       <button
         className="btn btn-primary"
-        onClick={() => copyToClipboard(`Procedure CPT code: ${documentData.procedureCode}\n\n${documentData.content}`)}
+        onClick={() => copyToClipboard(`${documentData.title}\nProcedure CPT code: ${documentData.procedureCode}\n\n${documentData.content}`)}
       >
         Copy
       </button>
